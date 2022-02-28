@@ -6,8 +6,16 @@ require("@nomiclabs/hardhat-etherscan");
 const { ALCHEMY_API_URL, PRIVATE_KEY } = process.env;
 
 module.exports = {
-  solidity: "0.8.7",
-  defaultNetwork: "rinkeby", // Deploy network rinkeby testnet or ethereum mainnet
+  solidity: {
+    version: "0.8.7",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
+  },
+  defaultNetwork: "ethereum", // Deploy network rinkeby testnet or etherium mainnet
   networks: {
     hardhat: {},
     rinkeby: {
@@ -21,6 +29,6 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: "EUGM9EVSMBNGJPA1QNZBQ4G3218DSN9RE5" // Test API
+    apiKey: "7X2ZEIYCV3WXBDFCP9J4YCKQWAJVKYET1H" // Gadjah
   }
 }
