@@ -14,10 +14,15 @@ contract GadjahSocietyHonoraries is ERC721A, Ownable {
 
     constructor() ERC721A("Gadjah Society Honoraries", "GDJH-HONOR", 20) {}
 
-    // Public function //
-
     function mint(uint256 _mintAmount) public onlyOwner {
         _safeMint(_msgSender(), _mintAmount);
+    }
+
+    function mintForAddress(uint256 _mintAmount, address _receiver)
+        public
+        onlyOwner
+    {
+        _safeMint(_receiver, _mintAmount);
     }
 
     function tokenURI(uint256 _tokenId)
