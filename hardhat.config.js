@@ -3,7 +3,7 @@ require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-ethers");
 require("@nomiclabs/hardhat-etherscan");
 
-const { ALCHEMY_API_URL, PRIVATE_KEY } = process.env;
+const { ALCHEMY_API_URL, PRIVATE_KEY, ETHERSCAN_API } = process.env;
 
 module.exports = {
   solidity: {
@@ -29,6 +29,6 @@ module.exports = {
     },
   },
   etherscan: {
-    apiKey: "7X2ZEIYCV3WXBDFCP9J4YCKQWAJVKYET1H" // Gadjah
+    apiKey: ETHERSCAN_API
   }
 }
